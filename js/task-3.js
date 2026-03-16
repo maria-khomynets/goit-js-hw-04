@@ -23,21 +23,15 @@ console.log(profile.getInfo());
 profile.updatePlayTime(20);
 console.log(profile.getInfo());
 
-function greet(name) {
-  console.log(`Welcome ${name}!`);
+function deliverPizza(pizzaName) {
+  return `Delivering ${pizzaName} pizza.`;
 }
 
-function notify(name) {
-  console.log(`Dear ${name}, your room will be ready in 30 minutes`);
+function makePizza(pizzaName) {
+  return `Pizza ${pizzaName} is being prepared, please wait...`;
 }
 
-function registerGuest(name, callback) {
-  console.log(`Registering ${name}!`);
-  callback(name);
+function makeMessage(pizzaName, callback) {
+  return callback(pizzaName);
 }
-
-registerGuest('Mango', greet); // "Registering Mango!"
-// "Welcome Mango!"
-
-registerGuest('Mango', notify); // "Registering Mango!"
-// "Dear Mango, your room will be ready in 30 minutes
+console.log(makeMessage('Royal Grand', makePizza));
