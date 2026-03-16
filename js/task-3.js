@@ -23,23 +23,21 @@ console.log(profile.getInfo());
 profile.updatePlayTime(20);
 console.log(profile.getInfo());
 
-
-// У змінну pizzaResult записати результат виконання функції makePizza.
-
-// У змінну drinkPointer записати посилання на функцію makeDrink.
-
-// Потім викликати функцію через drinkPointer і записати результат у drinkResult.
-function makePizza() {
-  return "Pizza is ready!";
+function greet(name) {
+  console.log(`Welcome ${name}!`);
 }
 
-function makeDrink() {
-  return "Drink is ready!";
+function notify(name) {
+  console.log(`Dear ${name}, your room will be ready in 30 minutes`);
 }
 
-const pizzaResult = ;
-const drinkPointer = ;
-const drinkResult = ;
+function registerGuest(name, callback) {
+  console.log(`Registering ${name}!`);
+  callback(name);
+}
 
-console.log(pizzaResult);
-console.log(drinkResult);
+registerGuest('Mango', greet); // "Registering Mango!"
+// "Welcome Mango!"
+
+registerGuest('Mango', notify); // "Registering Mango!"
+// "Dear Mango, your room will be ready in 30 minutes
