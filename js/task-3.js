@@ -23,15 +23,13 @@ console.log(profile.getInfo());
 profile.updatePlayTime(20);
 console.log(profile.getInfo());
 
-function deliverPizza(pizzaName) {
-  return `Delivering ${pizzaName} pizza.`;
+function makePizza(pizzaName, callback) {
+  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+  callback(pizzaName);
 }
 
-function makePizza(pizzaName) {
-  return `Pizza ${pizzaName} is being prepared, please wait...`;
-}
+makePizza('Royal Grand', function deliverPizza(pizzaName) {
+  console.log(`Delivering pizza ${pizzaName}`);
+});
 
-function makeMessage(pizzaName, callback) {
-  return callback(pizzaName);
-}
-console.log(makeMessage('Royal Grand', makePizza));
+makePizza('Ultracheese');
