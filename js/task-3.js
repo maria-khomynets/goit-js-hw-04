@@ -26,11 +26,5 @@ changeEven([17, 24, 68, 31, 42], 100);
 
 const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
 
-const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
-console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
-
-const planetsInLowerCase = planets.map(planet => planet.toLowerCase());
-console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
-
-// Оригінальний масив не змінився
-console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
+const planetsLengths = planets.map(planet => planet.length);
+console.log(planetsLengths);
