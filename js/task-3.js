@@ -15,21 +15,22 @@ const profile = {
   },
 };
 
-console.log(profile.getInfo());
-
-profile.changeUsername('Marco');
-console.log(profile.getInfo());
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo());
-
-function makePizza(pizzaName, callback) {
-  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
-  callback(pizzaName);
+function changeEven(numbers, value) {
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] % 2 === 0) {
+      numbers[i] = numbers[i] + value;
+    }
+  }
 }
+changeEven([17, 24, 68, 31, 42], 100);
 
-makePizza('Royal Grand', function deliverPizza(pizzaName) {
-  console.log(`Delivering pizza ${pizzaName}`);
-});
+const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
 
-makePizza('Ultracheese');
+const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
+console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
+
+const planetsInLowerCase = planets.map(planet => planet.toLowerCase());
+console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
+
+// Оригінальний масив не змінився
+console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
